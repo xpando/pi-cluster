@@ -1,0 +1,10 @@
+- hosts: all
+  remote_user: pi
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install netdata
+      apt:
+        name: netdata 
+        state: present

@@ -1,0 +1,10 @@
+- hosts: all
+  remote_user: pi
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install Java 8
+      apt:
+        name: openjdk-8-jdk-headless
+        state: present

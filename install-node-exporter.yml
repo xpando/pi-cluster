@@ -1,0 +1,12 @@
+- name: Install Prometheus Node Exporter
+  hosts: all
+  remote_user: pi
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Run script
+      script: scripts/install-node-exporter.sh
+      args:
+        creates: /etc/systemd/system/node-exporter.service
+      register: temp
+    - debug: var=temp

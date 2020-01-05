@@ -1,0 +1,8 @@
+- name: Get CPU/GPU Temps
+  hosts: all
+  remote_user: pi
+  tasks:
+    - name: Run script
+      script: scripts/pi-temp.sh
+      register: temp
+    - debug: var=temp
