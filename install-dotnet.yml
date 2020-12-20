@@ -1,0 +1,10 @@
+- name: Install Dotnet Core 
+  hosts: all
+  remote_user: pi
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Run script
+      script: scripts/install-dotnet.sh
+      register: temp
+    - debug: var=temp
